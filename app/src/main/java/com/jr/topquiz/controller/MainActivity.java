@@ -1,4 +1,4 @@
-package com.jr.topquiz;
+package com.jr.topquiz.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +11,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.jr.topquiz.R;
+import com.jr.topquiz.model.User;
+
+/**
+ * based on Florian Ponroy code for OCR
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mGreetingText;
     private EditText mNameInput;
     private Button mPlayButton;
+    private User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mGreetingText = findViewById(R.id.activity_main_greeting_txt);
         mNameInput = findViewById(R.id.activity_main_name_input);
         mPlayButton = findViewById(R.id.activity_main_play_btn);
+        mUser = new User();
 
         mPlayButton.setEnabled(false);
 
@@ -48,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // User clicked let's play button
+                mUser.setFirstName(mNameInput.getText().toString());
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(gameActivityIntent);
             }

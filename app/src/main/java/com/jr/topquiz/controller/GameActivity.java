@@ -1,4 +1,4 @@
-package com.jr.topquiz;
+package com.jr.topquiz.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.jr.topquiz.R;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Connecting widgets
+        // Wiring widgets
         mQuestionText = findViewById(R.id.activity_game_question_text);
         mAnswerBtn1 = findViewById(R.id.activity_game_answer1_btn);
         mAnswerBtn2 = findViewById(R.id.activity_game_answer2_btn);
